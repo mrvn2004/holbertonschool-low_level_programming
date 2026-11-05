@@ -9,18 +9,13 @@
  */
 int _atoi(char *s)
 {
-	int i;
-	int sign;
-	int result;
-	int digit;
-	int limit;
-	int multmin;
+	int i, sign, result, digit, limit;
 
 	i = 0;
 	sign = 1;
 	result = 0;
 
-	while (s[i] != '\0' && (s[i] < '0' || s[i] > '9'))
+	while (s[i] && (s[i] < '0' || s[i] > '9'))
 	{
 		if (s[i] == '-')
 			sign = -sign;
@@ -28,26 +23,18 @@ int _atoi(char *s)
 	}
 
 	limit = (sign == -1) ? INT_MIN : -INT_MAX;
-	multmin = limit / 10;
 
 	while (s[i] >= '0' && s[i] <= '9')
 	{
 		digit = s[i] - '0';
-
-		if (result < multmin)
-			return ((sign == -1) ? INT_MIN : INT_MAX);
-
+		if (result < limit / 10)
+			return (sign == -1 ? INT_MIN : INT_MAX);
 		result *= 10;
-
 		if (result < limit + digit)
-			return ((sign == -1) ? INT_MIN : INT_MAX);
-
+			return (sign == -1 ? INT_MIN : INT_MAX);
 		result -= digit;
 		i++;
 	}
 
-	if (sign == -1)
-		return (result);
-
-	return (-result);
+	return (sign == -1 ? result : -result);
 }
