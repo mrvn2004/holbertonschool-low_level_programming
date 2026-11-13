@@ -11,9 +11,13 @@ printf("4) Divide\n");
 printf("0) Quit\n");
 scanf("%d", &choice);
 
-	if (choice == 0)	
+if (choice == 0)
 {
-    printf("Bye!\n");
+     printf("Bye!\n");
 }
-return (0);
+else if (choice < 0 || choice > 4)
+{
+     printf("Invalid choice\n");
+}
+return(0);
 }
