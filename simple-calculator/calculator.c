@@ -6,6 +6,8 @@ int calcul(int a, int b, int op)
 		return (a + b);
 	else if (op == 2)
 		return (a - b);
+	else if (op == 3)
+		return (a*b);
 	else
 		return (0);
 }
