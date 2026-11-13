@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int calcul(int a, int b, int op)
+double calcul(int a, int b, int op)
 {
 	if (op == 1)
 		return (a + b);
@@ -8,6 +8,8 @@ int calcul(int a, int b, int op)
 		return (a - b);
 	else if (op == 3)
 		return (a*b);
+	else if (op == 4)
+		return ((double)a / b);
 	else
 		return (0);
 }
@@ -44,7 +46,14 @@ int main(void)
 			scanf("%d", &a);
 			printf("B: ");
 			scanf("%d", &b);
-			printf("Result: %d\n", calcul(a, b, choice));	
+			if (choice == 4 && b == 0)
+			{
+			    printf("Error: division by zero\n");
+			}
+			else
+			{
+			    printf("Result: %g\n", calcul(a, b, choice));
+			}
 		}
 	}
 }
