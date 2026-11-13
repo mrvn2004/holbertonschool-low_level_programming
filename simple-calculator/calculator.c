@@ -4,8 +4,12 @@ int calcul(int a, int b, int op)
 {
 	if (op == 1)
 		return (a + b);
-	return (0);	
+	else if (op == 2)
+		return (a - b);
+	else
+		return (0);
 }
+
 
 int main(void)
 {
