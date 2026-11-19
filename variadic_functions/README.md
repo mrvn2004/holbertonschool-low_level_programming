@@ -38,3 +38,20 @@ This function prints a list of strings separated by a given separator.
 - If `separator` is NULL, it is not printed.
 - If a string is NULL, `(nil)` is printed instead.
 - A new line is printed at the end.
+
+### 3. To be is a to be the value of a variable
+
+**File:** `3-print_all.c`
+
+**Prototype:**
+`void print_all(const char * const format, ...);`
+
+This function prints arguments according to their types:
+
+- `c`: prints a character.
+- `i`: prints an integer.
+- `f`: prints a float.
+- `s`: prints a string, or `(nil)` if the string is NULL.
+- Other format characters are ignored.
+
+Values are separated by commas and a space, and a new line is printed at the end.
