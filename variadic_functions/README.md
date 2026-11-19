@@ -23,3 +23,18 @@ At the end of this project, you should be able to explain:
 - All files end with a new line.
 - Code follows the Betty coding style.
 - No global variables are allowed.
+
+### 2. One woman's constant is another woman's variable
+
+**File:** `2-print_strings.c`
+
+**Prototype:**
+`void print_strings(const char *separator, const unsigned int n, ...);`
+
+This function prints a list of strings separated by a given separator.
+
+- `separator` is the string printed between strings.
+- `n` is the number of strings passed to the function.
+- If `separator` is NULL, it is not printed.
+- If a string is NULL, `(nil)` is printed instead.
+- A new line is printed at the end.
